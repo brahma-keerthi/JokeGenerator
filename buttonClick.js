@@ -1,4 +1,7 @@
-fetch('https://icanhazdadjoke.com/slack')
+const button = document.querySelector('#button');
+
+button.onclick = function(){
+    fetch('https://icanhazdadjoke.com/slack')
     .then(data => data.json())
     .then(jokeData => {
         const jokeText = jokeData.attachments[0].text;
@@ -6,4 +9,4 @@ fetch('https://icanhazdadjoke.com/slack')
 
         jokeElement.innerHTML = jokeText;
     })
-  
+}
